@@ -51,10 +51,12 @@ namespace ChartJs.Blazor.Samples.Server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebAssemblyDebugging();
+            } else
+            {
+                app.UseHsts();
             }
 
-            app.UseBlazorFrameworkFiles();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
